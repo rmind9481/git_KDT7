@@ -1,0 +1,52 @@
+# -------------------------------------------------------------
+#   dict 자료형의 전용 함수 즉, 메서드
+#   
+# -------------------------------------------------------------
+
+
+data ={'name':'홍길동', 'age':20, 'gender':'남', 'job':'의적'}
+
+# [6] dict에서 여러개 추가 해주는 메서드=> update()
+
+data['name'] = 'HONG'   # 값 변경
+data["phone"] = '010-2222-3333' #추가
+
+
+# - 키 = 값    ,  키 = 값    : str 타입 키 경우 ''하지 않음
+data.update(name ='마징가', phone='010-222-3333', height =180)
+
+
+# - 키 = 값 : str 타입의 키만 가능
+# data.update(100='good')
+
+# 내장함수 zip([],[],[],.....) => (0번 인덱스 요소들), (1번 인덱스 요소들)
+result = zip([1,2,3],['a','b','c'],[100,200,3000])
+print(list(result))
+
+data.update(zip(['A','B','C'],[100,200,300]))
+print('data Dict',data)
+
+
+
+# [6] dict 에서 원소/요소 꺼내기 메서드 pop(키) , popitem()
+
+# -키 튜플로 묶어서 꺼내 줌 즉, 데이터가 제거됨
+print(f"data.pop('name') => {data.pop('name')}")
+print(data)
+
+# -(키, 값) 튜플로 묶어서 꺼내 줌 즉, 데이터가 제거됨
+print(f"data.popitems() => {data.popitem()}")
+print(data)
+print(f"data.popitems() => {data.popitem()}")
+print(data)
+print(f"data.popitems() => {data.popitem()}")
+print(data)
+print(f"data.popitems() => {data.popitem()}")
+print(data)
+
+
+# [7] dict 에서 모든 원소/요소 삭제 메서드 => clear()
+data.clear()
+print(data)
+
+
