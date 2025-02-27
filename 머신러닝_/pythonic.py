@@ -126,4 +126,96 @@ blist = ['b1','b2','b3']
 
 
 for i , (a,b) in enumerate((zip(alist,blist))):
-		print(i,a,b)         
+		print(i,a,b) 
+
+
+
+# Lambda
+
+f = lambda x,y : x+y 
+print(f(3,4))
+
+f = lambda x: x**2
+
+print(f(3))
+
+f = lambda x:x/2
+print(f(3))
+
+print((lambda x:x+1)(5))
+ 
+
+ex =[1,2,3,4,5]
+
+print(list(map(lambda x: x+x ,ex)))
+
+# Reduce function
+
+from functools import reduce
+print(reduce(lambda x,y: x+y , [1,2,3,4,5]))
+
+def factorial(n):
+	return reduce(lambda x,y: x*y , range(1,n+1))
+
+
+print(factorial(5))
+
+
+# Asterisk 
+# 흔히 알고있는 * 를 의미함
+# 단순 곱셉, 제곱연산, 가변인자 활용들 
+
+
+# *args
+# 가변인자
+def asterisk_test(a,*args):
+	print(a,args)
+	print(type(args))
+
+asterisk_test(1,2,3,4,5,6)
+
+def asterisk_test2(a, **kargs):
+	print(a,kargs)
+	print(type(kargs))
+
+
+asterisk_test2(1,b=2,c=3,d=4,e=5,f=6)
+
+
+## Asterick - unpacking a container 
+
+def asterisk_test3(a, *args):
+	print(a, args[0])
+	print(type(args))
+
+
+
+asterisk_test3(1,(2,3,4,5,6))
+
+# 언팩킹 
+def asterisk_test4(a, args):
+	print(a, *args)
+	print(type(args))
+
+
+asterisk_test4(1,(2,3,4,5,6))
+
+a,b,c = ([1,2],[3,4],[5,6])
+print(a,b,c)
+
+data = ([1,2],[3,4],[5,6])
+print(*data)
+
+def asterisk_test5(a,b,c,d):
+	print(a,b,c,d)
+
+
+data = {'b':1,'c':2, 'd':3}
+
+asterisk_test5(10,**data)
+
+
+######
+
+for data in zip(*([1,2],[3,4],[5,6])):
+	print(sum(data))
