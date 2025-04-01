@@ -221,4 +221,4 @@ plt.title('Training Accuracy')
 plt.legend()
 
 plt.tight_layout()  # 레이아웃 조정
-plt.show()
+plt.show()                 
